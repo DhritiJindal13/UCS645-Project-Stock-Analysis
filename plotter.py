@@ -7,13 +7,12 @@ import matplotlib.ticker as ticker
 from mplfinance.original_flavor import candlestick_ohlc
 import datetime
  
-indicators_df = pd.read_csv('indicators.csv', parse_dates=['date'])
-ohlc_df = pd.read_csv('TSLA_data.csv', parse_dates=['date'])
+indicators_df = pd.read_csv('indicators.csv', parse_dates=['Date'])
+ohlc_df = pd.read_csv('TSLA_data.csv', parse_dates=['Date'])
 portfolio_df = pd.read_csv('backtest.csv', parse_dates=['date'])
  
-ohlc_df['date'] = pd.to_datetime(ohlc_df['date'])
-indicators_df['date'] = pd.to_datetime(indicators_df['date'])
-portfolio_df['date'] = pd.to_datetime(portfolio_df['date'])
+indicators_df.rename(columns={'Date': 'date'}, inplace=True)
+ohlc_df.rename(columns={'Date': 'date'}, inplace=True)
  
 ohlc_data = ohlc_df[['date', 'Open', 'High', 'Low', 'Close']].copy()
 ohlc_data['date'] = ohlc_data['date'].map(mdates.date2num)
