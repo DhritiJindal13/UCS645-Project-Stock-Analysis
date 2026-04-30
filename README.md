@@ -30,6 +30,4 @@
 
 
 
-#### The data I considered for this project
 
-![App Screenshot](./images/image.png)
