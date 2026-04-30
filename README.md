@@ -28,11 +28,7 @@
 - `indicators.csv` - Includes computed indicators and trade signals.
 - `backtest.csv` - Logs portfolio value, executed trades, and timestamps.
 
-## Screenshots
 
-![App Screenshot](./images/tradelog-snippet.png)
-![App Screenshot](./images/backtest.png)
-![App Screenshot](./images/candlestick-BB.png)
 
 #### The data I considered for this project
 
