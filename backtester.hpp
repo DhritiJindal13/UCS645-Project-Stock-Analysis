@@ -6,7 +6,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include "decision_logic.hpp"  // for Decision and Signal
+#include "decision_logic.hpp" 
 
 class Backtester {
 public:
@@ -52,17 +52,17 @@ public:
             portfolioValues.push_back(totalValue);
         }
 
-        // Final equity value
+
         finalValue = cash + shares * prices.back();
     }
 
     void report() const {
-        std::cout << "\n======= Backtest Report =======\n";
+        std::cout << "\nBacktest Report\n";
         std::cout << "Initial capital : $10,000.00\n";
         std::cout << "Final equity    : $" << std::fixed << std::setprecision(2) << finalValue << "\n";
         std::cout << "Total trades    : " << buyCount + sellCount << " (BUYs: " << buyCount << ", SELLs: " << sellCount << ")\n";
         std::cout << "Return          : " << ((finalValue - 10000.0f) / 10000.0f) * 100.0f << "%\n";
-        std::cout << "================================\n";
+        std::cout << "\n";
 
         if (!tradeLog.empty()) {
             std::cout << "\nTrade Log:\n";
@@ -120,4 +120,4 @@ private:
     std::vector<Trade> tradeLog;
 };
 
-#endif // BACKTESTER_HPP
+#endif 
